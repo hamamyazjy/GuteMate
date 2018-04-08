@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "474451663275",
+    "firebase_url": "https://grubmate-e2450.firebaseio.com",
+    "project_id": "grubmate-e2450",
+    "storage_bucket": "grubmate-e2450.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:474451663275:android:e1f4222fff41c377",
+        "android_client_info": {
+          "package_name": "com.example.hema.grubmate2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "474451663275-gsrla5bovuaflp3hvl4fv18vr8horfs7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hema.grubmate2",
+            "certificate_hash": "535f3d4767cace7e07e120cad4b595a6945f8556"
+          }
+        },
+        {
+          "client_id": "474451663275-p4h0930oemf03mfaigv53o85mghv34un.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChMuErokUkmzaTl9ozDptYWf30FQnGspc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "474451663275-p4h0930oemf03mfaigv53o85mghv34un.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
