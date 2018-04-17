@@ -15,6 +15,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
+import java.util.regex.Pattern;
+
 public class SignUp extends AppCompatActivity {
     MaterialEditText edtId,edtEmail,edtPhone,  edtName, edtPassword;
     Button btnSignUp;
@@ -31,7 +33,7 @@ public class SignUp extends AppCompatActivity {
         edtPhone =findViewById(R.id.edtPhone);
         btnSignUp = findViewById(R.id.btnSignUp);
 
-//Init Firebase
+           //Init Firebase
         FirebaseDatabase database=FirebaseDatabase.getInstance();
         final DatabaseReference table_use =database.getReference("User");
 
@@ -41,7 +43,7 @@ public class SignUp extends AppCompatActivity {
                 final ProgressDialog mDialog =new ProgressDialog(SignUp.this);
                 mDialog.setMessage("Please Wating....");
                 mDialog.show();
-                table_use.addValueEventListener(new ValueEventListener() {
+                ValueEventListener valueEventListener = table_use.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
 
@@ -50,12 +52,13 @@ public class SignUp extends AppCompatActivity {
                             mDialog.dismiss();
                             Toast.makeText(SignUp.this, "Id is already exist", Toast.LENGTH_SHORT).show();
 
-                        }else {
+                        } else {
                             mDialog.dismiss();
-                            User user =new User(edtName.getText().toString(),edtPassword.getText().toString(),edtPhone.getText().toString(), edtEmail.getText().toString());
+                            User user = new User(edtId.getText().toString(),edtName.getText().toString(), edtPassword.getText().toString(), edtPhone.getText().toString(), edtEmail.getText().toString());
                             table_use.child(edtId.getText().toString()).setValue(user);
                             Toast.makeText(SignUp.this, "Sign Up Successfully", Toast.LENGTH_SHORT).show();
                             finish();
+
                         }
                     }
 
@@ -68,4 +71,12 @@ public class SignUp extends AppCompatActivity {
             }
         });
     }
-}
+    public static final Pattern EMAIL_PATTERN = Pattern.compile(
+        "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
+                "\\@" +
+                "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,64}" +
+                "(" +
+                "\\." +
+                "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,25}" +
+                ")+"
+);}

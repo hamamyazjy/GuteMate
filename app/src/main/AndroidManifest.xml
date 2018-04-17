@@ -32,7 +32,9 @@
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".SearchActivity"></activity>
+        <activity android:name=".SearchActivity" />
+        <activity android:name=".PostActivity" />
+        <activity android:name=".FeedActivity"></activity>
     </application>
 
 </manifest>

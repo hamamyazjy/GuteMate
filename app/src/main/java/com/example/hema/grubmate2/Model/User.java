@@ -5,8 +5,27 @@ package com.example.hema.grubmate2.Model;
  */
 
 public class User {
+    private  String ID;
     private  String Name;
-     private  String Password;
+
+    public String getID() {
+        return ID;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
+    }
+
+    public User(String ID, String name, String password, String phone, String email) {
+        this.ID = ID;
+
+        Name = name;
+        Password = password;
+        Phone = phone;
+        Email = email;
+    }
+
+    private  String Password;
     private  String Phone;
     private  String Email;
 
@@ -15,12 +34,6 @@ public class User {
         return Name;
     }
 
-    public User(String name, String password, String phone, String email) {
-        Name = name;
-        Password = password;
-        Phone = phone;
-        Email = email;
-    }
 
     public void setName(String name) {
         Name = name;
